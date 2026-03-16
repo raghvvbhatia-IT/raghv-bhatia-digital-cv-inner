@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raghv Bhatia - Portfolio</title>
+  <base target="_parent" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <script>
+    window.onload = () => {
+      addEventListener('mousemove', (e) => {
+        window.parent.postMessage({ clientX: e.clientX, clientY: e.clientY, type: 'mousemove' }, '*');
+      });
+      addEventListener('mousedown', () => window.parent.postMessage({ type: 'mousedown' }, '*'));
+      addEventListener('mouseup', () => window.parent.postMessage({ type: 'mouseup' }, '*'));
+      addEventListener('keydown', (e) => window.parent.postMessage({ type: 'keydown', key: e.key }, '*'));
+      addEventListener('keyup', (e) => window.parent.postMessage({ type: 'keyup', key: e.key }, '*'));
+    };
+  </script>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+</html>
