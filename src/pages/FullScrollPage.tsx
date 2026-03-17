@@ -37,7 +37,7 @@ const dividerStyle: React.CSSProperties = {
 };
 
 /* ─────────────── About ─────────────── */
-const AboutSection: React.FC = () => (
+export const AboutSection: React.FC = () => (
   <div id="about" style={sectionStyle()}>
     <h2 style={h2Style}>About Me</h2>
     <div style={dividerStyle} />
@@ -111,7 +111,7 @@ const Job: React.FC<JobProps> = ({ company, url, role, dates, tag, description, 
   </div>
 );
 
-const ExperienceSection: React.FC = () => (
+export const ExperienceSection: React.FC = () => (
   <div id="experience" style={sectionStyle(true)}>
     <h2 style={h2Style}>Work Experience</h2>
     <div style={dividerStyle} />
@@ -151,7 +151,7 @@ const softSkills = [
   'Excellent problem-solving and critical thinking',
 ];
 
-const SkillsSection: React.FC = () => (
+export const SkillsSection: React.FC = () => (
   <div id="skills" style={sectionStyle()}>
     <h2 style={h2Style}>Skills</h2>
     <div style={dividerStyle} />
@@ -184,7 +184,7 @@ const SkillsSection: React.FC = () => (
 );
 
 /* ─────────────── Projects ─────────────── */
-const ProjectsSection: React.FC = () => (
+export const ProjectsSection: React.FC = () => (
   <div id="projects" style={sectionStyle()}>
     <h2 style={h2Style}>Projects</h2>
     <div style={dividerStyle} />
@@ -193,7 +193,7 @@ const ProjectsSection: React.FC = () => (
 );
 
 /* ─────────────── Hobbies ─────────────── */
-const HobbiesSection: React.FC = () => (
+export const HobbiesSection: React.FC = () => (
   <div id="hobbies" style={{ ...sectionStyle(true), borderBottom: 'none' }}>
     <h2 style={h2Style}>Hobbies</h2>
     <div style={dividerStyle} />

@@ -2,10 +2,11 @@ import React, { useState, useCallback } from 'react';
 import Window from './Window';
 import Taskbar from './Taskbar';
 import DesktopIcon from './DesktopIcon';
-import FullScrollPage from '../pages/FullScrollPage';
+import MapPortfolio from '../pages/MapPortfolio';
 import Contact from '../pages/Contact';
+import PacManGame from '../pages/PacManGame';
 
-type PageKey = 'portfolio' | 'contact';
+type PageKey = 'portfolio' | 'contact' | 'pacman';
 
 interface WindowState {
   id: string;
@@ -20,6 +21,7 @@ let zCounter = 10;
 const PAGE_TITLES: Record<PageKey, string> = {
   portfolio: 'Raghv Bhatia — Portfolio',
   contact: 'Contact Details',
+  pacman: 'Pac-Man',
 };
 
 const Desktop: React.FC = () => {
@@ -57,14 +59,16 @@ const Desktop: React.FC = () => {
 
   const renderPage = (page: PageKey) => {
     switch (page) {
-      case 'portfolio': return <FullScrollPage />;
+      case 'portfolio': return <MapPortfolio />;
       case 'contact':   return <Contact />;
+      case 'pacman':    return <PacManGame />;
     }
   };
 
   const desktopIcons = [
     { label: 'My Portfolio', icon: '🖥️', page: 'portfolio' as PageKey },
     { label: 'Contact Details', icon: '✉️', page: 'contact' as PageKey },
+    { label: 'Pac-Man', icon: '🕹️', page: 'pacman' as PageKey },
   ];
 
   return (
