@@ -160,7 +160,6 @@ const Desktop: React.FC = () => {
                 {/* Scroll section nav — About, Experience, Skills */}
                 {scrollNavItems.map(p => {
                   const current = activePage[w.id] ?? w.page;
-                  const isActive = current === p || (SCROLL_PAGES.includes(current) && p === 'about' && !SCROLL_PAGES.includes(current));
                   const isScrollActive = SCROLL_PAGES.includes(current) && current === p;
                   return (
                     <div
