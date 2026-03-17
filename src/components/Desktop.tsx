@@ -34,8 +34,6 @@ const PAGE_TITLES: Record<PageKey, string> = {
 
 // Pages that are part of the scrollable view
 const SCROLL_PAGES: PageKey[] = ['about', 'experience', 'skills'];
-// Pages that are click-to-navigate
-const CLICK_PAGES: PageKey[] = ['certifications', 'projects', 'hobbies'];
 
 const Desktop: React.FC = () => {
   const [windows, setWindows] = useState<WindowState[]>([
@@ -190,7 +188,7 @@ const Desktop: React.FC = () => {
                 {/* Click section nav — Certifications, Projects, Hobbies */}
                 {clickNavItems.map(p => {
                   const current = activePage[w.id] ?? w.page;
-                  const isActive = current === p;
+                  const active = current === p;
                   return (
                     <div
                       key={p}
@@ -202,11 +200,11 @@ const Desktop: React.FC = () => {
                         fontWeight: 'bold',
                         letterSpacing: 0.5,
                         color: '#000080',
-                        textDecoration: isActive ? 'none' : 'underline',
+                        textDecoration: active ? 'none' : 'underline',
                         background: 'transparent',
                       }}
                     >
-                      {isActive ? '• ' : ''}{PAGE_TITLES[p]}
+                      {active ? '• ' : ''}{PAGE_TITLES[p]}
                     </div>
                   );
                 })}
