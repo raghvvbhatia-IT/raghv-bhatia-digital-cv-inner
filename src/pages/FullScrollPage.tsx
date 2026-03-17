@@ -3,14 +3,14 @@ import Certifications from './Certifications';
 
 /* ── Design tokens ── */
 const C = {
-  bg:        '#fdf8f4',   // warm cream page background
-  bgAlt:     '#f7f3ee',   // slightly darker cream for alternating sections
-  text:      '#2c2c2c',   // soft charcoal — easy on eyes
-  textSub:   '#5a5755',   // muted secondary text
+  bg:        '#ddd8d1',   // warm stone — soft, not harsh on eyes
+  bgAlt:     '#d4cfc8',   // slightly darker stone for alternating sections
+  text:      '#1e1e1e',   // deep charcoal for good contrast on warm bg
+  textSub:   '#4a4744',   // muted secondary text
   accent:    '#1a3a6b',   // deep professional blue
-  divider:   '#e0dbd4',   // soft warm divider
-  cardBg:    '#ffffff',   // white card
-  cardBorder:'#ece7e1',   // card border
+  divider:   '#c4bfb8',   // warm divider
+  cardBg:    '#e8e3dc',   // warm card background (not white)
+  cardBorder:'#c8c3bc',   // card border
   tag:       '#1a3a6b',
 };
 
