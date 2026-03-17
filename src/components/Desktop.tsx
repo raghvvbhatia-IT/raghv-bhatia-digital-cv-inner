@@ -3,13 +3,13 @@ import Window from './Window';
 import Taskbar from './Taskbar';
 import DesktopIcon from './DesktopIcon';
 import Home from '../pages/Home';
-import About from '../pages/About';
-import Experience from '../pages/Experience';
-import Skills from '../pages/Skills';
+import ScrollableSections from '../pages/ScrollableSections';
 import Certifications from '../pages/Certifications';
+import Projects from '../pages/Projects';
+import Hobbies from '../pages/Hobbies';
 import Contact from '../pages/Contact';
 
-type PageKey = 'home' | 'about' | 'experience' | 'skills' | 'certifications' | 'contact';
+type PageKey = 'home' | 'about' | 'experience' | 'skills' | 'certifications' | 'projects' | 'hobbies' | 'contact';
 
 interface WindowState {
   id: string;
@@ -27,8 +27,15 @@ const PAGE_TITLES: Record<PageKey, string> = {
   experience: 'Work Experience',
   skills: 'Skills',
   certifications: 'Certifications',
+  projects: 'Projects',
+  hobbies: 'Hobbies',
   contact: 'Contact Details',
 };
+
+// Pages that are part of the scrollable view
+const SCROLL_PAGES: PageKey[] = ['about', 'experience', 'skills'];
+// Pages that are click-to-navigate
+const CLICK_PAGES: PageKey[] = ['certifications', 'projects', 'hobbies'];
 
 const Desktop: React.FC = () => {
   const [windows, setWindows] = useState<WindowState[]>([
@@ -75,13 +82,17 @@ const Desktop: React.FC = () => {
 
   const renderPage = (winId: string, page: PageKey) => {
     const nav = (p: PageKey) => navigate(winId, p);
+    const isScrollPage = SCROLL_PAGES.includes(page);
+    if (isScrollPage) {
+      return <ScrollableSections scrollTo={page as 'about' | 'experience' | 'skills'} />;
+    }
     switch (page) {
       case 'home': return <Home navigate={nav} />;
-      case 'about': return <About />;
-      case 'experience': return <Experience />;
-      case 'skills': return <Skills />;
       case 'certifications': return <Certifications />;
+      case 'projects': return <Projects />;
+      case 'hobbies': return <Hobbies />;
       case 'contact': return <Contact />;
+      default: return null;
     }
   };
 
@@ -89,6 +100,10 @@ const Desktop: React.FC = () => {
     { label: 'My Portfolio', icon: '🖥️', page: 'home' as PageKey },
     { label: 'Contact Details', icon: '✉️', page: 'contact' as PageKey },
   ];
+
+  // Sidebar nav groups
+  const scrollNavItems: PageKey[] = ['about', 'experience', 'skills'];
+  const clickNavItems: PageKey[] = ['certifications', 'projects', 'hobbies'];
 
   return (
     <div style={{ width: '100vw', height: '100vh', background: '#008080', position: 'relative', overflow: 'hidden' }}>
@@ -124,7 +139,7 @@ const Desktop: React.FC = () => {
             renderPage(w.id, activePage[w.id] ?? w.page)
           ) : (
             <div style={{ display: 'flex', height: '100%' }}>
-              {/* Sidebar — only on inner pages */}
+              {/* Sidebar */}
               <div className="win-sidebar" style={{
                 width: 285,
                 background: '#fff',
@@ -134,14 +149,46 @@ const Desktop: React.FC = () => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 padding: '24px 0',
+                overflowY: 'auto',
               }}>
+                {/* Name block */}
                 <div style={{ padding: '0 24px', marginBottom: 24, borderBottom: '1px solid #c0c0c0', paddingBottom: 24 }}>
                   <div style={{ fontSize: 51, lineHeight: 1.1, color: '#1a1a1a', fontFamily: '"Abril Fatface", Georgia, serif' }}>
                     Raghv{'\n'}Bhatia
                   </div>
                   <div style={{ fontSize: 23, color: '#444', marginTop: 12, fontFamily: 'Georgia, serif' }}>Portfolio '26</div>
                 </div>
-                {(['home','about','experience','skills','certifications'] as PageKey[]).map(p => {
+
+                {/* Scroll section nav — About, Experience, Skills */}
+                {scrollNavItems.map(p => {
+                  const current = activePage[w.id] ?? w.page;
+                  const isActive = current === p || (SCROLL_PAGES.includes(current) && p === 'about' && !SCROLL_PAGES.includes(current));
+                  const isScrollActive = SCROLL_PAGES.includes(current) && current === p;
+                  return (
+                    <div
+                      key={p}
+                      onClick={() => navigate(w.id, p)}
+                      style={{
+                        padding: '10px 24px',
+                        cursor: 'pointer',
+                        fontSize: 25,
+                        fontWeight: 'bold',
+                        letterSpacing: 0.5,
+                        color: '#000080',
+                        textDecoration: isScrollActive ? 'none' : 'underline',
+                        background: 'transparent',
+                      }}
+                    >
+                      {isScrollActive ? '• ' : ''}{PAGE_TITLES[p].split('—').pop()?.trim() ?? PAGE_TITLES[p]}
+                    </div>
+                  );
+                })}
+
+                {/* Divider */}
+                <div style={{ height: 1, background: '#c0c0c0', margin: '10px 24px' }} />
+
+                {/* Click section nav — Certifications, Projects, Hobbies */}
+                {clickNavItems.map(p => {
                   const current = activePage[w.id] ?? w.page;
                   const isActive = current === p;
                   return (
@@ -149,9 +196,9 @@ const Desktop: React.FC = () => {
                       key={p}
                       onClick={() => navigate(w.id, p)}
                       style={{
-                        padding: '12px 24px',
+                        padding: '10px 24px',
                         cursor: 'pointer',
-                        fontSize: 27,
+                        fontSize: 25,
                         fontWeight: 'bold',
                         letterSpacing: 0.5,
                         color: '#000080',
@@ -159,13 +206,14 @@ const Desktop: React.FC = () => {
                         background: 'transparent',
                       }}
                     >
-                      {isActive ? '• ' : ''}{PAGE_TITLES[p].split('—').pop()?.trim() ?? PAGE_TITLES[p]}
+                      {isActive ? '• ' : ''}{PAGE_TITLES[p]}
                     </div>
                   );
                 })}
               </div>
+
               {/* Page content */}
-              <div style={{ flex: 1, overflow: 'auto' }}>
+              <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 {renderPage(w.id, activePage[w.id] ?? w.page)}
               </div>
             </div>
