@@ -149,7 +149,7 @@ const Window: React.FC<WindowProps> = ({
       </div>
 
       {/* Content */}
-      <div className="win-inner-content" style={{ flex: 1, overflow: 'auto', background: '#fafafa', margin: 2 }}>
+      <div className="win-inner-content" style={{ flex: 1, overflow: 'auto', background: '#fdf8f4', margin: 2 }}>
         {children}
       </div>
 
