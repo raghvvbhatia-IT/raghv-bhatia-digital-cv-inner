@@ -134,12 +134,12 @@ const SectionTitle: React.FC<{ title: string; count?: string; top?: boolean }> =
       fontSize: top ? 48 : 28,
       fontFamily: '"Abril Fatface", Georgia, serif',
       fontWeight: 400,
-      color: '#1a1a1a',
+      color: '#b8880a',
       marginBottom: 4,
       lineHeight: 1,
     }}>{title}</h2>
-    {count && <div style={{ fontSize: 13, color: '#888', letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 6 }}>{count}</div>}
-    <div style={{ height: 1, background: '#ccc' }} />
+    {count && <div style={{ fontSize: 13, color: '#7a7060', letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 6 }}>{count}</div>}
+    <div style={{ height: 2, background: 'linear-gradient(to right, #b8880a, transparent)' }} />
   </div>
 );
 
@@ -172,33 +172,33 @@ const CertRow: React.FC<{ cert: Cert | OngoingCert; ongoing?: boolean }> = ({ ce
   return (
     <div style={{
       display: 'flex', alignItems: 'center',
-      border: `1px solid ${ongoing ? '#e8a000' : '#e8e8e8'}`, overflow: 'hidden',
+      border: `1px solid ${ongoing ? '#c8a840' : '#ccc8c2'}`, overflow: 'hidden',
     }}>
       <div style={{
         width: 90, flexShrink: 0,
         background: custom ? '#fff' : ongoing ? '#b8860b' : cert.accent,
         padding: '18px 0',
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 6,
-        borderRight: custom ? '1px solid #e8e8e8' : 'none',
+        borderRight: custom ? '1px solid #ccc8c2' : 'none',
       }}>
         {renderIcon(cert)}
         <span style={{ fontSize: 13, fontWeight: 'bold', color: custom ? badgeTextColor(cert) : '#fff', letterSpacing: 1 }}>
           {cert.badge}
         </span>
       </div>
-      <div style={{ flex: 1, padding: '16px 20px', background: ongoing ? '#fffbf0' : '#fafafa' }}>
-        <div style={{ fontSize: 19, fontWeight: 'bold', color: '#222', marginBottom: 6, fontFamily: '"Playfair Display", Georgia, serif' }}>{cert.title}</div>
-        <div style={{ fontSize: 16, color: '#555' }}>{cert.issuer}</div>
+      <div style={{ flex: 1, padding: '16px 20px', background: ongoing ? '#f5edd8' : '#ede9e3' }}>
+        <div style={{ fontSize: 19, fontWeight: 'bold', color: '#1a1a1a', marginBottom: 6, fontFamily: '"Playfair Display", Georgia, serif' }}>{cert.title}</div>
+        <div style={{ fontSize: 16, color: '#5a5550' }}>{cert.issuer}</div>
       </div>
       <div style={{
         width: ongoing ? 110 : 80, flexShrink: 0,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        background: ongoing ? '#fff8e0' : '#f0f0f0',
-        borderLeft: `1px solid ${ongoing ? '#e8c96a' : '#e8e8e8'}`, alignSelf: 'stretch',
+        background: ongoing ? '#ecddb8' : '#e2ddd6',
+        borderLeft: `1px solid ${ongoing ? '#c8a840' : '#ccc8c2'}`, alignSelf: 'stretch',
       }}>
         {ongoing
-          ? <span style={{ fontSize: 13, color: '#9a6a00', fontWeight: 'bold', textAlign: 'center', lineHeight: 1.4 }}>IN{'\n'}PROGRESS</span>
-          : <span style={{ fontSize: 20, color: '#444', fontWeight: 'bold', fontFamily: '"Playfair Display", Georgia, serif' }}>{cert.year}</span>
+          ? <span style={{ fontSize: 13, color: '#8a6000', fontWeight: 'bold', textAlign: 'center', lineHeight: 1.4 }}>IN{'\n'}PROGRESS</span>
+          : <span style={{ fontSize: 20, color: '#1a1a1a', fontWeight: 'bold', fontFamily: '"Playfair Display", Georgia, serif' }}>{cert.year}</span>
         }
       </div>
     </div>
@@ -208,7 +208,7 @@ const CertRow: React.FC<{ cert: Cert | OngoingCert; ongoing?: boolean }> = ({ ce
 /* ── Page ── */
 
 const Certifications: React.FC = () => (
-  <div style={{ padding: '28px 40px', maxWidth: 740 }}>
+  <div style={{ padding: '28px 40px' }}>
     <SectionTitle title="Certifications" count={`${certifications.length} certifications`} top />
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 40 }}>
       {certifications.map((cert) => (

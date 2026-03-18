@@ -9,13 +9,15 @@ const Contact: React.FC = () => {
   const inputStyle: React.CSSProperties = {
     width: '100%',
     padding: '10px 14px',
-    border: '1px solid #ccc',
+    border: '1px solid #ccc8c2',
     fontSize: 16,
     fontFamily: '"Playfair Display", Georgia, serif',
     marginTop: 6,
     marginBottom: 18,
     outline: 'none',
-    background: '#fafafa',
+    background: '#f0ece6',
+    color: '#1a1a1a',
+    boxSizing: 'border-box',
   };
 
   const handleSubmit = () => {
@@ -26,18 +28,18 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', minHeight: '100%', padding: '40px 20px' }}>
+    <div style={{ background: '#eae7e2', minHeight: '100%', display: 'flex', justifyContent: 'center', alignItems: 'flex-start', padding: '40px 20px' }}>
     <div style={{ width: '100%', maxWidth: 600 }}>
 
       <h2 style={{
         fontSize: 48,
         fontFamily: '"Abril Fatface", Georgia, serif',
         fontWeight: 400,
-        color: '#1a1a1a',
+        color: '#b8880a',
         marginBottom: 6,
         lineHeight: 1,
       }}>Contact</h2>
-      <div style={{ height: 1, background: '#ccc', marginBottom: 28 }} />
+      <div style={{ height: 2, background: 'linear-gradient(to right, #b8880a, transparent)', marginBottom: 28 }} />
 
       {/* Direct contact info */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 36 }}>
@@ -46,27 +48,27 @@ const Contact: React.FC = () => {
         <ContactRow label="LinkedIn" value="linkedin.com/in/raghv-bhatia" href="https://www.linkedin.com/in/raghv-bhatia/" />
       </div>
 
-      <div style={{ height: 1, background: '#ccc', marginBottom: 28 }} />
+      <div style={{ height: 1, background: '#ccc8c2', marginBottom: 28 }} />
 
       <h3 style={{
         fontSize: 28,
         fontFamily: '"Abril Fatface", Georgia, serif',
         fontWeight: 400,
-        color: '#1a1a1a',
+        color: '#b8880a',
         marginBottom: 20,
       }}>Send a Message</h3>
 
       {sent && (
-        <p style={{ fontSize: 16, color: '#2a7a2a', marginBottom: 16 }}>✔ Message sent! I'll be in touch.</p>
+        <p style={{ fontSize: 16, color: '#3d8a5e', marginBottom: 16 }}>✔ Message sent! I'll be in touch.</p>
       )}
 
-      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#555' }}>Your Name *</label>
+      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#5a5550' }}>Your Name *</label>
       <input style={inputStyle} value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
 
-      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#555' }}>Email *</label>
+      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#5a5550' }}>Email *</label>
       <input style={inputStyle} value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email" />
 
-      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#555' }}>Message *</label>
+      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#5a5550' }}>Message *</label>
       <textarea style={{ ...inputStyle, height: 120, resize: 'vertical' }} value={message} onChange={e => setMessage(e.target.value)} placeholder="Your message..." />
 
       <button
@@ -78,8 +80,8 @@ const Contact: React.FC = () => {
           fontFamily: '"Playfair Display", Georgia, serif',
           fontWeight: 'bold',
           letterSpacing: 1,
-          background: !name || !email || !message ? '#ccc' : '#1a1a1a',
-          color: '#fff',
+          background: !name || !email || !message ? '#ccc8c2' : '#b8880a',
+          color: !name || !email || !message ? '#8a8580' : '#fff',
           border: 'none',
           cursor: !name || !email || !message ? 'default' : 'pointer',
         }}
@@ -99,13 +101,13 @@ const ContactRow: React.FC<{ label: string; value: string; href: string }> = ({ 
       fontWeight: 'bold',
       letterSpacing: 1.5,
       textTransform: 'uppercase',
-      color: '#888',
+      color: '#7a7060',
       width: 80,
       flexShrink: 0,
     }}>{label}</span>
     <a href={href} target="_blank" rel="noreferrer" style={{
       fontSize: 17,
-      color: '#000080',
+      color: '#b8880a',
       textDecoration: 'underline',
       fontFamily: '"Playfair Display", Georgia, serif',
     }}>{value}</a>

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import Certifications from './Certifications';
 
-/* ── Design tokens — dark theme with wallpaper accent colours ── */
+/* ── Design tokens — light warm gray with wallpaper accent colours ── */
 const C = {
-  bg:        '#1e1e1e',   // dark charcoal — matches wallpaper background
-  bgAlt:     '#252525',   // slightly lighter dark for alternating sections
-  text:      '#e8e0c8',   // warm cream — from the Windows logo on the wallpaper
-  textSub:   '#9a9080',   // muted warm cream for secondary text
-  accent:    '#d4a030',   // amber/gold — from the wallpaper stripe
-  divider:   '#383830',   // dark warm divider
-  cardBg:    '#2a2a2a',   // dark card background
-  cardBorder:'#3a3830',   // dark card border with warm tint
-  tag:       '#5a9e7a',   // green — from the wallpaper top stripe
+  bg:        '#eae7e2',   // warm light gray
+  bgAlt:     '#e2dedb',   // slightly deeper warm gray for alternating sections
+  text:      '#1a1a1a',   // near-black for strong contrast on light bg
+  textSub:   '#5a5550',   // muted warm brown-gray
+  accent:    '#b8880a',   // amber/gold (darkened for legibility on light bg)
+  divider:   '#ccc8c2',   // warm gray divider
+  cardBg:    '#f0ece6',   // warm off-white card
+  cardBorder:'#d0cbc4',   // warm card border
+  tag:       '#3d8a5e',   // green — from the wallpaper top stripe (darkened for contrast)
 };
 
 const sectionStyle = (alt?: boolean): React.CSSProperties => ({
