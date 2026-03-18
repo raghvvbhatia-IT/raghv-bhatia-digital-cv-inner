@@ -161,23 +161,62 @@ const ExperienceSection: React.FC = () => (
 
 /* ─────────────── Skills ─────────────── */
 const techSkills = [
-  { category: 'Cloud Platforms', items: ['AWS', 'Azure AZ-900', 'Azure AZ-104', 'Microsoft Entra ID', 'Azure Active Directory'] },
-  { category: 'Security & Compliance', items: ['Microsoft Defender', 'Microsoft Purview', 'Security Incident Response', 'ISC2 CC'] },
-  { category: 'Endpoint & Device Management', items: ['Microsoft Intune', 'SCCM', 'Knox Management', 'Flexera Snow', 'Windows', 'iOS', 'Linux'] },
-  { category: 'Microsoft 365 Administration', items: ['Teams Admin', 'Defender', 'Exchange', 'Purview', 'AppDynamics', 'Zscaler ELK', 'Thousand Eyes'] },
-  { category: 'Business Applications', items: ['Microsoft FinOps', 'Dynamics 365', 'SAP C/4HANA', 'CRM Tools', 'EFTPOS / POS Systems', 'Payment Gateway Troubleshooting'] },
-  { category: 'Scripting & Automation', items: ['PowerShell', 'Active Directory', 'ITIL Service Management', 'License Management', 'Network Configuration'] },
-  { category: 'IT Service & Operations', items: ['Project Planning', 'IT Support', 'Vendor Account Management', 'User Onboarding & Offboarding', 'IT Asset Management'] },
+  {
+    category: 'Microsoft Ecosystem & Administration',
+    items: [
+      'Microsoft 365 Administration (Teams, Defender, Exchange, Purview)',
+      'SCCM deployment & Intune management',
+      'Microsoft FinOps application administration',
+      'Dynamics 365 Retail application & hardware setup',
+      'Azure administration (AZ-104 level)',
+    ],
+  },
+  {
+    category: 'Scripting & Automation',
+    items: ['PowerShell scripting and automation'],
+  },
+  {
+    category: 'Security & Compliance',
+    items: [
+      'Security Incident Response',
+      'Cybersecurity practices (ISC2 level)',
+      'Managing and auditing third-party vendor accounts',
+    ],
+  },
+  {
+    category: 'Troubleshooting & Support',
+    items: [
+      'Windows, iOS & Linux troubleshooting',
+      'Payment Gateway & EFTPOS troubleshooting',
+      'Hardware/software support (desktops, laptops, printers, POS, handheld devices)',
+    ],
+  },
+  {
+    category: 'Infrastructure & Network',
+    items: [
+      'Network configuration and device management',
+      'IT asset inventory & compliance',
+      'License management',
+    ],
+  },
+  {
+    category: 'Project & Service Management',
+    items: [
+      'Project planning and execution',
+      'ITIL-based service management',
+      'CRM tools (SAP C/4HANA and FinOps)',
+    ],
+  },
 ];
 
 const softSkills = [
-  'Collaborative team player across cross-functional teams',
-  'Strong communication and customer service',
-  'Self-motivated and positive thinking',
-  'Efficient time management and task prioritisation',
-  'Attention to detail in system configuration and hardware setup',
-  'Adaptable to new technologies and rapidly changing environments',
-  'Excellent problem-solving and critical thinking',
+  'Collaborative team player – proven in cross-functional environments',
+  'Excellent communication and customer service',
+  'Self-motivated with a consistently positive attitude',
+  'Strong time management and prioritisation under pressure',
+  'Exceptional attention to detail (system configs, user access, hardware setup)',
+  'Highly adaptable to new technologies and fast-changing business needs',
+  'Outstanding problem-solving and critical-thinking abilities',
 ];
 
 const SkillsSection: React.FC = () => (
