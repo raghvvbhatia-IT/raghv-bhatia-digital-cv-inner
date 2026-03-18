@@ -84,14 +84,12 @@ const Desktop: React.FC = () => {
 
       {/* Desktop Icons */}
       <div style={{ position: 'absolute', top: 16, left: 16, display: 'flex', flexDirection: 'column', zIndex: 1 }}>
-        {desktopIcons.map(icon => (
-          <DesktopIcon
-            key={icon.page}
-            label={icon.label}
-            icon={icon.icon}
-            onClick={() => openWindow(icon.page)}
-          />
-        ))}
+        <DesktopIcon label="My Portfolio"    icon="🖥️" onClick={() => openWindow('portfolio')} />
+        <DesktopIcon label="Contact Details" icon="✉️" onClick={() => openWindow('contact')} />
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <DesktopIcon label="Pac-Man" icon="🕹️" onClick={() => openWindow('pacman')} />
+          <DesktopIcon label="Lotto"   icon="🎰" onClick={() => openWindow('lotto')} />
+        </div>
       </div>
 
       {/* Windows */}

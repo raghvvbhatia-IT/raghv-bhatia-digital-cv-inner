@@ -357,7 +357,15 @@ const HobbiesSection: React.FC = () => (
   <div id="hobbies" style={{ ...sectionStyle(true), borderBottom: 'none' }}>
     <h2 style={h2Style}>Hobbies</h2>
     <div style={dividerStyle} />
-    <p style={{ fontSize: 19, lineHeight: 1.9, color: C.textSub }}>Hobbies coming soon.</p>
+    <ul style={{ paddingLeft: 24, margin: 0, listStyleType: 'disc' }}>
+      {[
+        'Photography using DSLR, with strong focus on composition and visual storytelling',
+        'Photo & video editing using Adobe Photoshop and After Effects',
+        'Road trips, travelling, and exploring new places',
+      ].map((h, i) => (
+        <li key={i} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 8, color: '#111111' }}>{h}</li>
+      ))}
+    </ul>
   </div>
 );
 
