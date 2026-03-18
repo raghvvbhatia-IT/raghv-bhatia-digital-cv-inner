@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import Window from './Window';
 import Taskbar from './Taskbar';
 import DesktopIcon from './DesktopIcon';
-import MapPortfolio from '../pages/MapPortfolio';
+import FullScrollPage from '../pages/FullScrollPage';
 import Contact from '../pages/Contact';
 import PacManGame from '../pages/PacManGame';
 
@@ -59,16 +59,16 @@ const Desktop: React.FC = () => {
 
   const renderPage = (page: PageKey) => {
     switch (page) {
-      case 'portfolio': return <MapPortfolio />;
+      case 'portfolio': return <FullScrollPage />;
       case 'contact':   return <Contact />;
       case 'pacman':    return <PacManGame />;
     }
   };
 
   const desktopIcons = [
-    { label: 'My Portfolio', icon: '🖥️', page: 'portfolio' as PageKey },
-    { label: 'Contact Details', icon: '✉️', page: 'contact' as PageKey },
-    { label: 'Pac-Man', icon: '🕹️', page: 'pacman' as PageKey },
+    { label: 'My Portfolio',    icon: '🖥️', page: 'portfolio' as PageKey },
+    { label: 'Contact Details', icon: '✉️', page: 'contact'   as PageKey },
+    { label: 'Pac-Man',         icon: '🕹️', page: 'pacman'    as PageKey },
   ];
 
   return (
