@@ -277,9 +277,9 @@ const SkillsSection: React.FC = () => (
           <div style={{ fontSize: 15, fontWeight: 'bold', color: C.accent, letterSpacing: 0.5, marginBottom: 8 }}>
             {group.category}
           </div>
-          <ul style={{ paddingLeft: 20, margin: 0 }}>
+          <ul style={{ paddingLeft: 24, margin: 0, listStyleType: 'disc' }}>
             {group.items.map(item => (
-              <li key={item} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 4, color: C.text }}>{item}</li>
+              <li key={item} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 4, color: '#111111' }}>{item}</li>
             ))}
           </ul>
         </div>
@@ -289,9 +289,9 @@ const SkillsSection: React.FC = () => (
     <div style={{ height: 1, background: C.divider, marginBottom: 32 }} />
 
     <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.text, marginBottom: 24 }}>Soft Skills</h3>
-    <ul style={{ paddingLeft: 20, margin: 0 }}>
+    <ul style={{ paddingLeft: 24, margin: 0, listStyleType: 'disc' }}>
       {softSkills.map((skill, i) => (
-        <li key={i} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 6, color: C.text }}>{skill}</li>
+        <li key={i} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 6, color: '#111111' }}>{skill}</li>
       ))}
     </ul>
   </div>
