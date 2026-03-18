@@ -110,35 +110,35 @@ interface JobData {
 
 const jobs: JobData[] = [
   {
-    company: 'Farmlands Co-operative',
+    company: 'Farmlands Co-operative Ltd',
     url: 'https://www.farmlands.co.nz',
     role: 'Technology Digital Experience Partner',
     dates: 'May 2025 – Present',
     tag: 'Level 1 & 2',
-    prose: 'At Farmlands, I serve as the frontline technology partner for over 1,000 staff across retail sites nationwide. My role spans the full IT lifecycle — from onboarding new team members and setting up their systems, to managing third-party vendor accounts, enabling secure Microsoft Teams collaboration with external organisations, and supporting business-critical platforms like Farmlands Pro, FinOps, Dynamics SE, and POS. I lead end-to-end IT setups for new retail sites, handling everything from PCs and networks to EFTPOS terminals and barcode scanners. I monitor system performance daily, ensure issues are resolved within SLA, and regularly train staff on the tools they depend on.',
+    prose: 'In my current role at Farmlands Co-operative Ltd, I serve as the primary IT point of contact for both retail stores and corporate teams across New Zealand. I provide comprehensive technical support to ensure seamless daily operations for hundreds of staff members. My responsibilities include creating, configuring, and managing user accounts and third-party vendor access, while enabling secure external collaboration through Microsoft Teams and integrated applications. I handle full-cycle onboarding and offboarding processes — from initial account setup and access provisioning to secure deactivation — and coordinate hardware upgrades, replacements, and staff requests. I troubleshoot and resolve complex issues across critical business systems such as EFTPOS, Farmlands Pro, Microsoft Dynamics 365, and POS terminals, as well as supporting printers, laptops, desktops, and handheld devices. I maintain an accurate IT asset inventory, monitor system performance against strict SLAs, and escalate issues only when necessary. Additionally, I lead the complete IT setup for new retail site launches (including PCs, networks, scanners, and POS infrastructure) and deliver hands-on training to staff on key applications. By collaborating cross-functionally and optimising third-party integrations, I continuously improve business processes and minimise downtime.',
   },
   {
     company: 'Christchurch City Council',
     url: 'https://www.ccc.govt.nz',
     role: 'Digital Support Analyst',
-    dates: 'Dec 2024 – May 2025',
+    dates: 'December 2024 – May 2025',
     tag: 'Level 1 & 2',
-    prose: 'In this role I supported over 3,000 council employees, ensuring their technology worked reliably every day. I managed user onboarding and offboarding through Active Directory, deployed and decommissioned hardware using SCCM, Intune, and Flexera Snow, and administered access to more than 100 software applications. I also built and maintained IT Knowledge Base articles to reduce repeat tickets, categorised and escalated hardware incidents by priority (P1/P2), and collaborated with senior engineers on more complex infrastructure issues.',
+    prose: 'At Christchurch City Council, I supported a large user base of over 3,000 staff members, ensuring reliable IT operations across the organisation. I managed the end-to-end user onboarding and offboarding lifecycle, including Active Directory access extensions, role changes, and temporary leave-based restrictions. Using tools such as SCCM, Intune, and Flexera, I deployed new hardware and decommissioned outdated devices efficiently. I created and maintained a comprehensive IT Knowledge Base to empower self-service and reduce repeat tickets. I categorised, troubleshot, and escalated P1 and P2 incidents while personally following up with users on critical issues to confirm resolution and close tickets promptly. I also administered access to more than 100 software applications through various admin portals, tailored to individual roles. This role strengthened my ability to deliver fast, accurate support in a high-volume public-sector environment while maintaining excellent user satisfaction.',
   },
   {
     company: 'Selwyn District Council',
     url: 'https://www.selwyn.govt.nz',
     role: 'Digital Operations Support Specialist',
-    dates: 'Aug 2023 – Oct 2024',
-    prose: 'At Selwyn, I was responsible for day-to-day IT support across the council, resolving 99% of tickets within SLA with minimal disruption to services. I coordinated with external vendors for upgrades and operational needs, handled the full onboarding and offboarding process including accounts, licensing, and equipment, and investigated security incidents flagged through Microsoft Defender and Teams alerts. I also contributed to cross-departmental infrastructure projects, bringing a collaborative and solutions-focused approach to every engagement.',
+    dates: 'August 2023 – October 2024',
+    prose: 'While working at Selwyn District Council, I delivered frontline IT support by resolving daily support tickets quickly and effectively. I managed user onboarding and offboarding, including account creation, licensing allocation, and equipment provisioning. I achieved a 99% first-contact resolution rate and consistently met or exceeded SLA targets, ensuring minimal disruption to council services. I created and updated internal documentation and user guides to streamline processes for both IT and non-technical staff. I coordinated with external vendors for system upgrades and maintenance, and I actively investigated and resolved security incidents flagged by Microsoft Defender and internal alerts channels. My contributions extended to cross-departmental projects, where I collaborated with stakeholders to deliver timely IT solutions and support organisational initiatives.',
   },
   {
     company: 'ACC New Zealand',
     url: 'https://www.acc.co.nz',
     role: 'Performance Monitoring Specialist',
-    dates: 'Nov 2022 – Feb 2023',
+    dates: 'November 2022 – February 2023',
     tag: 'Internship',
-    prose: 'My internship at ACC gave me hands-on experience in enterprise infrastructure monitoring. I used tools like AppDynamics, Zscaler ELK, and ThousandEyes to track server and application performance in real time. I designed and managed a customer service dashboard that integrated multiple APIs and application data sources, giving the team a clearer picture of system health. I also collaborated with the security team to harden server configurations and managed after-hours change schedules, including server patching and security updates.',
+    prose: 'At ACC New Zealand, I specialised in proactive system monitoring and performance optimisation. I tracked server and application health using advanced tools including AppDynamics, Zscaler ELK Stack, and Thousand Eyes. I supported multiple internal IT projects in partnership with team leads and designed and maintained a custom customer-service dashboard that integrated APIs, server data, and other applications for real-time insights. I worked closely with security teams to strengthen system protections and implemented after-hours change schedules, server patching, and security updates to maintain high availability and compliance. This short but intensive role sharpened my monitoring, automation, and risk-management skills in a fast-paced national organisation.',
   },
 ];
 
