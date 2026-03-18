@@ -72,14 +72,7 @@ const AboutSection: React.FC = () => (
 
     <p style={{ fontSize: 18, lineHeight: 1.95, color: C.text, marginBottom: 20 }}>
       Today, I'm based in <strong style={{ color: C.accent }}>Christchurch</strong>, still carrying that
-      same fire that brought me to New Zealand in 2019. Currently working as a{' '}
-      <strong style={{ color: C.accent }}>Technology Digital Experience Partner</strong> at{' '}
-      <strong style={{ color: C.accent }}>Farmlands Co-operative Ltd</strong> — supporting over 1,000
-      staff across New Zealand retail sites. My role spans frontline IT support for business-critical
-      systems including Farmlands Pro, FinOps, Dynamics SE, and EFTPOS; managing third-party vendor
-      accounts; handling user onboarding and offboarding; coordinating hardware upgrades and deployments;
-      training staff on key platforms; and leading full IT setups for new retail site launches — from
-      networks and PCs to POS systems and scanners. Whether I'm solving IT challenges, exploring new
+      same fire that brought me to New Zealand in 2019. Whether I'm solving IT challenges, exploring new
       technologies, or helping businesses make the most of their digital tools, I approach every project
       with the same mindset: curiosity, attention to detail, and a genuine desire to create something
       meaningful.
