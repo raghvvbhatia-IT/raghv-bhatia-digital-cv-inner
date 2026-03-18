@@ -155,7 +155,7 @@ const Window: React.FC<WindowProps> = ({
 
       {/* Status bar */}
       <div style={{ background: '#c0c0c0', padding: '2px 8px', fontSize: 11, flexShrink: 0, borderTop: '1px solid #808080', display: 'flex', justifyContent: 'space-between' }}>
-        <span>© 2025 Raghv Bhatia</span>
+        <span>© 2026 Raghv Bhatia</span>
         <div
           style={{ width: 16, height: 16, cursor: 'nwse-resize', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           onMouseDown={onResizeMouseDown}

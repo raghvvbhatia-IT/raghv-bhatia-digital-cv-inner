@@ -230,7 +230,7 @@ const LottoGame: React.FC = () => {
       {(phase === 'won' || phase === 'revealed') && (
         <div style={{
           position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(10, 8, 30, 0.93)',
+          background: 'rgba(10, 8, 30, 1)',
           display: 'flex', flexDirection: 'column',
           alignItems: 'center', justifyContent: 'center',
           zIndex: 10,
