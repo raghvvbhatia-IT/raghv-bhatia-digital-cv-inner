@@ -137,7 +137,7 @@ const Window: React.FC<WindowProps> = ({
         <div style={{ display: 'flex', flexShrink: 0 }}>
           <div style={btnStyle} onMouseDown={(e) => { e.stopPropagation(); onMinimize(); }}>_</div>
           <div style={btnStyle} onMouseDown={(e) => { e.stopPropagation(); toggleMaximize(); }}>□</div>
-          <div style={{ ...btnStyle, marginLeft: 2 }} onMouseDown={(e) => { e.stopPropagation(); onClose(); }}>✕</div>
+          <div style={{ ...btnStyle, marginLeft: 2, background: '#cc0000', color: '#ffffff' }} onMouseDown={(e) => { e.stopPropagation(); onClose(); }}>✕</div>
         </div>
       </div>
 

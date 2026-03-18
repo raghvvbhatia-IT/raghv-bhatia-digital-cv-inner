@@ -135,8 +135,8 @@ const LottoGame: React.FC = () => {
     setPhase('revealed');
 
     const link = document.createElement('a');
-    link.href     = '/Raghv_Bhatia_CV.pdf';
-    link.download = 'Raghv_Bhatia_CV.pdf';
+    link.href     = "/Raghav Bhatia's CV (2026).pdf";
+    link.download = "Raghav Bhatia's CV (2026).pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
