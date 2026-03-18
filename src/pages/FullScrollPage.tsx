@@ -311,16 +311,18 @@ const ProjectCard: React.FC<{ title: string; website: string; github: string; de
       </div>
       <div style={{ maxHeight: open ? 600 : 0, overflow: 'hidden', transition: 'max-height 0.4s ease' }}>
         <div style={{ padding: '0 24px 24px', borderTop: `1px solid ${C.divider}` }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, margin: '16px 0 16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ fontSize: 14, fontWeight: 'bold', color: C.textSub, width: 70, flexShrink: 0 }}>🌐 Website</span>
-              <a href={website} target="_blank" rel="noreferrer" style={{ fontSize: 15, color: C.accent, textDecoration: 'underline', wordBreak: 'break-all' }}>{website.replace('https://', '')}</a>
+          {(website || github) && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, margin: '16px 0 16px' }}>
+              {website && <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ fontSize: 14, fontWeight: 'bold', color: C.textSub, width: 70, flexShrink: 0 }}>🌐 Website</span>
+                <a href={website} target="_blank" rel="noreferrer" style={{ fontSize: 15, color: C.accent, textDecoration: 'underline', wordBreak: 'break-all' }}>{website.replace('https://', '')}</a>
+              </div>}
+              {github && <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ fontSize: 14, fontWeight: 'bold', color: C.textSub, width: 70, flexShrink: 0 }}>💻 GitHub</span>
+                <a href={github} target="_blank" rel="noreferrer" style={{ fontSize: 15, color: C.accent, textDecoration: 'underline', wordBreak: 'break-all' }}>{github.replace('https://', '')}</a>
+              </div>}
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <span style={{ fontSize: 14, fontWeight: 'bold', color: C.textSub, width: 70, flexShrink: 0 }}>💻 GitHub</span>
-              <a href={github} target="_blank" rel="noreferrer" style={{ fontSize: 15, color: C.accent, textDecoration: 'underline', wordBreak: 'break-all' }}>{github.replace('https://', '')}</a>
-            </div>
-          </div>
+          )}
           <p style={{ fontSize: 17, lineHeight: 1.9, color: '#111111', margin: 0 }}>{description}</p>
         </div>
       </div>
@@ -332,6 +334,12 @@ const ProjectsSection: React.FC = () => (
   <div id="projects" style={sectionStyle()}>
     <h2 style={h2Style}>Projects</h2>
     <div style={dividerStyle} />
+    <ProjectCard
+      title="Private AI Document Assistant (NotebookLM-Style)"
+      website=""
+      github=""
+      description="NotebookLM is an AI-powered research assistant — think of it as a smart reading companion that can read through large documents, answer your questions about them, summarise complex information, create study guides, and even generate podcast-style audio overviews. Originally built by Google, it is a powerful tool for anyone who needs to make sense of large amounts of text quickly. This project is a privately hosted version of that same concept, built to run entirely within a company's own servers and devices — meaning no data ever leaves the organisation. Instead of sending sensitive company documents to Google's cloud, this setup uses Ollama (a tool for running AI models locally) combined with Mistral (a high-performance open-source AI model) to power the same intelligent document analysis — all behind closed doors. From a security and compliance perspective, this is significant. Many industries — particularly finance, legal, and healthcare — cannot risk uploading internal documents to third-party cloud services due to privacy regulations and data sovereignty requirements. This private setup gives teams all the power of an AI research assistant with none of the risk: company data stays on company infrastructure, every query is processed internally, and there is no dependency on external APIs or internet connectivity."
+    />
     <ProjectCard
       title="GRC Lab — CyberShield Financial Corp (CSFC)"
       website="https://raghvvbhatia-it.github.io/GRC-Lab---CyberShield-Financial-Corp-CSFC-/"
