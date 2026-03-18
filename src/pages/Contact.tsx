@@ -98,10 +98,10 @@ const ContactRow: React.FC<{ label: string; value: string; href: string }> = ({ 
   <div style={{ display: 'flex', alignItems: 'baseline', gap: 16 }}>
     <span style={{
       fontSize: 13,
-      fontWeight: 'bold',
+      fontWeight: 900,
       letterSpacing: 1.5,
       textTransform: 'uppercase',
-      color: '#7a7060',
+      color: '#111111',
       width: 80,
       flexShrink: 0,
     }}>{label}</span>
