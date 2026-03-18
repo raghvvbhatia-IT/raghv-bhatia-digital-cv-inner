@@ -42,7 +42,7 @@ const AboutSection: React.FC = () => (
     <h2 style={h2Style}>About Me</h2>
     <div style={dividerStyle} />
 
-    <p style={{ fontSize: 19, lineHeight: 1.95, color: C.text, marginBottom: 20, fontStyle: 'italic', borderLeft: `4px solid ${C.accent}`, paddingLeft: 20 }}>
+    <p style={{ fontSize: 19, lineHeight: 1.95, color: C.text, marginBottom: 20, fontStyle: 'italic', fontWeight: 'bold', borderLeft: `4px solid ${C.accent}`, paddingLeft: 20 }}>
       My story didn't start in a classroom — it started with a one-way ticket and a big dream.
     </p>
 
