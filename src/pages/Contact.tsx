@@ -62,13 +62,13 @@ const Contact: React.FC = () => {
         <p style={{ fontSize: 16, color: '#3d8a5e', marginBottom: 16 }}>✔ Message sent! I'll be in touch.</p>
       )}
 
-      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#5a5550' }}>Your Name *</label>
+      <label style={{ fontSize: 15, fontWeight: 900, letterSpacing: 1.2, textTransform: 'uppercase', color: '#1a1a1a' }}>Your Name *</label>
       <input style={inputStyle} value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
 
-      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#5a5550' }}>Email *</label>
+      <label style={{ fontSize: 15, fontWeight: 900, letterSpacing: 1.2, textTransform: 'uppercase', color: '#1a1a1a' }}>Email *</label>
       <input style={inputStyle} value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" type="email" />
 
-      <label style={{ fontSize: 14, fontWeight: 'bold', letterSpacing: 1, textTransform: 'uppercase', color: '#5a5550' }}>Message *</label>
+      <label style={{ fontSize: 15, fontWeight: 900, letterSpacing: 1.2, textTransform: 'uppercase', color: '#1a1a1a' }}>Message *</label>
       <textarea style={{ ...inputStyle, height: 120, resize: 'vertical' }} value={message} onChange={e => setMessage(e.target.value)} placeholder="Your message..." />
 
       <button
