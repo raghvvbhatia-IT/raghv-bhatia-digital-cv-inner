@@ -88,7 +88,7 @@ const certifications = [
   {
     title: 'Technical Security Audit & Assessment',
     issuer: 'LinkedIn Learning',
-    year: '2023',
+    year: '2025',
     accent: '#0a66c2',
     icon: null,
     badge: 'LI',
@@ -97,7 +97,7 @@ const certifications = [
   {
     title: 'PowerShell: Automating IT Administration',
     issuer: 'LinkedIn Learning',
-    year: '2023',
+    year: '2025',
     accent: '#0a66c2',
     icon: null,
     badge: 'LI',
@@ -106,7 +106,7 @@ const certifications = [
   {
     title: 'Cybersecurity with Cloud Computing',
     issuer: 'LinkedIn Learning',
-    year: '2022',
+    year: '2025',
     accent: '#0a66c2',
     icon: null,
     badge: 'LI',
