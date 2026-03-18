@@ -298,7 +298,7 @@ const SkillsSection: React.FC = () => (
 );
 
 /* ─────────────── Projects ─────────────── */
-const ProjectCard: React.FC<{ title: string; website: string; github: string; description: string }> = ({ title, website, github, description }) => {
+const ProjectCard: React.FC<{ title: string; website: string; github: string; description: string; inProgress?: boolean }> = ({ title, website, github, description, inProgress }) => {
   const [open, setOpen] = useState(false);
   return (
     <div style={{ background: C.cardBg, border: `1px solid ${C.cardBorder}`, borderLeft: `4px solid ${C.accent}`, marginBottom: 16 }}>
@@ -306,7 +306,10 @@ const ProjectCard: React.FC<{ title: string; website: string; github: string; de
         onClick={() => setOpen(o => !o)}
         style={{ padding: '20px 24px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}
       >
-        <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.accent, margin: 0 }}>{title}</h3>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.accent, margin: 0 }}>{title}</h3>
+          {inProgress && <span style={{ fontSize: 11, background: '#d4a030', color: '#fff', padding: '3px 10px', borderRadius: 20, letterSpacing: 0.5, fontWeight: 'bold', whiteSpace: 'nowrap' }}>IN PROGRESS</span>}
+        </div>
         <span style={{ fontSize: 20, color: C.accent, flexShrink: 0, transition: 'transform 0.3s', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
       </div>
       <div style={{ maxHeight: open ? 600 : 0, overflow: 'hidden', transition: 'max-height 0.4s ease' }}>
@@ -335,16 +338,17 @@ const ProjectsSection: React.FC = () => (
     <h2 style={h2Style}>Projects</h2>
     <div style={dividerStyle} />
     <ProjectCard
-      title="Private AI Document Assistant (NotebookLM-Style)"
-      website=""
-      github=""
-      description="NotebookLM is an AI-powered research assistant — think of it as a smart reading companion that can read through large documents, answer your questions about them, summarise complex information, create study guides, and even generate podcast-style audio overviews. Originally built by Google, it is a powerful tool for anyone who needs to make sense of large amounts of text quickly. This project is a privately hosted version of that same concept, built to run entirely within a company's own servers and devices — meaning no data ever leaves the organisation. Instead of sending sensitive company documents to Google's cloud, this setup uses Ollama (a tool for running AI models locally) combined with Mistral (a high-performance open-source AI model) to power the same intelligent document analysis — all behind closed doors. From a security and compliance perspective, this is significant. Many industries — particularly finance, legal, and healthcare — cannot risk uploading internal documents to third-party cloud services due to privacy regulations and data sovereignty requirements. This private setup gives teams all the power of an AI research assistant with none of the risk: company data stays on company infrastructure, every query is processed internally, and there is no dependency on external APIs or internet connectivity."
-    />
-    <ProjectCard
       title="GRC Lab — CyberShield Financial Corp (CSFC)"
       website="https://raghvvbhatia-it.github.io/GRC-Lab---CyberShield-Financial-Corp-CSFC-/"
       github="https://github.com/raghvvbhatia-IT/GRC-Lab---CyberShield-Financial-Corp-CSFC-"
       description="Governance, Risk, and Compliance Lab — a self-contained training environment designed for learning governance, risk, and compliance within a realistic financial services context. Built entirely with fictional data and developed with the help of Claude Code, using AI-driven prompting to produce the desired outputs, this project simulates real-world GRC workflows and documentation. The goal is to gain hands-on, practical experience that directly mirrors what professionals encounter in the industry — from risk registers and policy frameworks to compliance audits and incident response planning — making it an ideal environment for building genuine GRC job-ready skills."
+    />
+    <ProjectCard
+      title="Private AI Document Assistant (NotebookLM-Style)"
+      website=""
+      github=""
+      inProgress
+      description="NotebookLM is an AI-powered research assistant — think of it as a smart reading companion that can read through large documents, answer your questions about them, summarise complex information, create study guides, and even generate podcast-style audio overviews. Originally built by Google, it is a powerful tool for anyone who needs to make sense of large amounts of text quickly. This project is a privately hosted version of that same concept, built to run entirely within a company's own servers and devices — meaning no data ever leaves the organisation. Instead of sending sensitive company documents to Google's cloud, this setup uses Ollama (a tool for running AI models locally) combined with Mistral (a high-performance open-source AI model) to power the same intelligent document analysis — all behind closed doors. From a security and compliance perspective, this is significant. Many industries — particularly finance, legal, and healthcare — cannot risk uploading internal documents to third-party cloud services due to privacy regulations and data sovereignty requirements. This private setup gives teams all the power of an AI research assistant with none of the risk: company data stays on company infrastructure, every query is processed internally, and there is no dependency on external APIs or internet connectivity."
     />
   </div>
 );
