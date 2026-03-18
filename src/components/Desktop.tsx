@@ -69,12 +69,6 @@ const Desktop: React.FC = () => {
     }
   };
 
-  const desktopIcons = [
-    { label: 'My Portfolio',    icon: '🖥️', page: 'portfolio' as PageKey },
-    { label: 'Contact Details', icon: '✉️', page: 'contact'   as PageKey },
-    { label: 'Pac-Man',         icon: '🕹️', page: 'pacman'    as PageKey },
-    { label: 'Lotto',           icon: '🎰', page: 'lotto'     as PageKey },
-  ];
 
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
