@@ -140,6 +140,13 @@ const jobs: JobData[] = [
     tag: 'Internship',
     prose: 'At ACC New Zealand, I specialised in proactive system monitoring and performance optimisation. I tracked server and application health using advanced tools including AppDynamics, Zscaler ELK Stack, and Thousand Eyes. I supported multiple internal IT projects in partnership with team leads and designed and maintained a custom customer-service dashboard that integrated APIs, server data, and other applications for real-time insights. I worked closely with security teams to strengthen system protections and implemented after-hours change schedules, server patching, and security updates to maintain high availability and compliance. This short but intensive role sharpened my monitoring, automation, and risk-management skills in a fast-paced national organisation.',
   },
+  {
+    company: 'New World Supermarket',
+    url: 'https://www.newworld.co.nz',
+    role: 'Checkout Operator',
+    dates: '2019 – February 2023',
+    prose: 'During my time at New World, I delivered fast and friendly service to customers at the checkout, processing cash, EFTPOS, and credit card transactions accurately and efficiently. I greeted customers warmly, assisted with queries, and ensured every interaction was a positive one. I maintained a clean and well-organised checkout area, adhered to store policies and procedures, and supported teammates during busy periods and peak trading hours. This role developed my communication skills, my ability to work effectively under pressure, and my commitment to delivering excellent customer service consistently.',
+  },
 ];
 
 const AccordionJob: React.FC<JobData> = ({ company, url, role, dates, tag, prose }) => {
