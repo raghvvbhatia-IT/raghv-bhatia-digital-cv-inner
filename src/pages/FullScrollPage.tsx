@@ -219,7 +219,7 @@ const techSkills = [
   },
   {
     category: 'Scripting & Automation',
-    items: ['PowerShell scripting and automation'],
+    items: ['PowerShell scripting and automation', 'Claude Code (cloud projects)', 'Other AI-based automation tools'],
   },
   {
     category: 'Security & Compliance',
