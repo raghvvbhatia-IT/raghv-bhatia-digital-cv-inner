@@ -298,11 +298,46 @@ const SkillsSection: React.FC = () => (
 );
 
 /* ─────────────── Projects ─────────────── */
+const ProjectCard: React.FC<{ title: string; website: string; github: string; description: string }> = ({ title, website, github, description }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ background: C.cardBg, border: `1px solid ${C.cardBorder}`, borderLeft: `4px solid ${C.accent}`, marginBottom: 16 }}>
+      <div
+        onClick={() => setOpen(o => !o)}
+        style={{ padding: '20px 24px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}
+      >
+        <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.accent, margin: 0 }}>{title}</h3>
+        <span style={{ fontSize: 20, color: C.accent, flexShrink: 0, transition: 'transform 0.3s', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
+      </div>
+      <div style={{ maxHeight: open ? 600 : 0, overflow: 'hidden', transition: 'max-height 0.4s ease' }}>
+        <div style={{ padding: '0 24px 24px', borderTop: `1px solid ${C.divider}` }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, margin: '16px 0 16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontSize: 14, fontWeight: 'bold', color: C.textSub, width: 70, flexShrink: 0 }}>🌐 Website</span>
+              <a href={website} target="_blank" rel="noreferrer" style={{ fontSize: 15, color: C.accent, textDecoration: 'underline', wordBreak: 'break-all' }}>{website.replace('https://', '')}</a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontSize: 14, fontWeight: 'bold', color: C.textSub, width: 70, flexShrink: 0 }}>💻 GitHub</span>
+              <a href={github} target="_blank" rel="noreferrer" style={{ fontSize: 15, color: C.accent, textDecoration: 'underline', wordBreak: 'break-all' }}>{github.replace('https://', '')}</a>
+            </div>
+          </div>
+          <p style={{ fontSize: 17, lineHeight: 1.9, color: '#111111', margin: 0 }}>{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ProjectsSection: React.FC = () => (
   <div id="projects" style={sectionStyle()}>
     <h2 style={h2Style}>Projects</h2>
     <div style={dividerStyle} />
-    <p style={{ fontSize: 19, lineHeight: 1.9, color: C.textSub }}>Projects coming soon.</p>
+    <ProjectCard
+      title="GRC Lab — CyberShield Financial Corp (CSFC)"
+      website="https://raghvvbhatia-it.github.io/GRC-Lab---CyberShield-Financial-Corp-CSFC-/"
+      github="https://github.com/raghvvbhatia-IT/GRC-Lab---CyberShield-Financial-Corp-CSFC-"
+      description="Governance, Risk, and Compliance Lab — a self-contained training environment designed for learning governance, risk, and compliance within a realistic financial services context. Built entirely with fictional data and developed with the help of Claude Code, using AI-driven prompting to produce the desired outputs, this project simulates real-world GRC workflows and documentation. The goal is to gain hands-on, practical experience that directly mirrors what professionals encounter in the industry — from risk registers and policy frameworks to compliance audits and incident response planning — making it an ideal environment for building genuine GRC job-ready skills."
+    />
   </div>
 );
 
