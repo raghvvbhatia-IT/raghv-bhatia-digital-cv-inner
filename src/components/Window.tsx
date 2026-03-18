@@ -98,30 +98,30 @@ const Window: React.FC<WindowProps> = ({
   const titleBarStyle: React.CSSProperties = {
     background: 'linear-gradient(to right, #000080, #1084d0)',
     color: '#fff',
-    padding: '3px 4px',
+    padding: '4px 6px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     cursor: 'default',
     flexShrink: 0,
-    height: 22,
+    height: 32,
   };
 
   const btnStyle: React.CSSProperties = {
-    width: 16,
-    height: 14,
+    width: 24,
+    height: 22,
     background: '#c0c0c0',
-    borderTop: '1px solid #ffffff',
-    borderLeft: '1px solid #ffffff',
-    borderRight: '1px solid #404040',
-    borderBottom: '1px solid #404040',
+    borderTop: '2px solid #ffffff',
+    borderLeft: '2px solid #ffffff',
+    borderRight: '2px solid #404040',
+    borderBottom: '2px solid #404040',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    fontSize: 9,
+    fontSize: 13,
     fontWeight: 'bold',
-    marginLeft: 2,
+    marginLeft: 3,
     flexShrink: 0,
     color: '#000',
   };
@@ -130,8 +130,8 @@ const Window: React.FC<WindowProps> = ({
     <div style={style} onMouseDown={onFocus}>
       {/* Title bar */}
       <div style={titleBarStyle} onMouseDown={onTitleMouseDown}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 11, fontWeight: 'bold', overflow: 'hidden' }}>
-          <span style={{ fontSize: 12 }}>🖥</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 'bold', overflow: 'hidden' }}>
+          <span style={{ fontSize: 16 }}>🖥</span>
           <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{title}</span>
         </div>
         <div style={{ display: 'flex', flexShrink: 0 }}>
