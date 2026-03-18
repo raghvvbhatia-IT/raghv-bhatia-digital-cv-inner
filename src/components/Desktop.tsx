@@ -6,6 +6,7 @@ import FullScrollPage from '../pages/FullScrollPage';
 import Contact from '../pages/Contact';
 import PacManGame from '../pages/PacManGame';
 import LottoGame from '../pages/LottoGame';
+import RobotWallpaper from './RobotWallpaper';
 
 type PageKey = 'portfolio' | 'contact' | 'pacman' | 'lotto';
 
@@ -76,7 +77,10 @@ const Desktop: React.FC = () => {
   ];
 
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#008080', position: 'relative', overflow: 'hidden' }}>
+    <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden' }}>
+
+      {/* Wallpaper */}
+      <RobotWallpaper />
 
       {/* Desktop Icons */}
       <div style={{ position: 'absolute', top: 16, left: 16, display: 'flex', flexDirection: 'column', zIndex: 1 }}>
