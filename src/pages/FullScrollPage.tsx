@@ -56,7 +56,7 @@ const AboutSection: React.FC = () => (
 
     <p style={{ fontSize: 18, lineHeight: 1.95, color: C.text, marginBottom: 20 }}>
       I enrolled in the <strong style={{ color: C.accent }}>Bachelor of Information Technology</strong> at
-      Ara Institute of Canterbury, ready to turn my passion into a career. Those three years became the
+      Wellington Institute of Technology (WelTec), ready to turn my passion into a career. Those three years became the
       most transformative chapter of my life. I went from writing my first simple scripts to building
       full applications, working on security and network setups, collaborating on real-world projects,
       and learning how to solve problems the Kiwi way — with creativity, teamwork, and a healthy dose
@@ -95,7 +95,7 @@ const AboutSection: React.FC = () => (
         </span>
         <span style={{ fontSize: 16, color: C.textSub, fontFamily: '"Playfair Display", Georgia, serif' }}>2019 – 2022</span>
       </div>
-      <div style={{ fontSize: 17, color: C.textSub, marginTop: 6 }}>Ara Institute of Canterbury, New Zealand</div>
+      <div style={{ fontSize: 17, color: C.textSub, marginTop: 6 }}>Wellington Institute of Technology (WelTec), New Zealand</div>
     </div>
   </div>
 );
