@@ -41,6 +41,21 @@ const LinkedInIcon: React.FC = () => (
   </svg>
 );
 
+const CompTIAIcon: React.FC = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="36" height="36">
+    <rect width="60" height="60" rx="4" fill="#c8102e"/>
+    <polygon points="30,8 52,30 30,52 8,30" fill="#ffffff" opacity="0.15"/>
+    <text x="50%" y="44%" dominantBaseline="middle" textAnchor="middle"
+      fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="10" fill="#ffffff" letterSpacing="0.5">
+      CompTIA
+    </text>
+    <text x="50%" y="70%" dominantBaseline="middle" textAnchor="middle"
+      fontFamily="Arial, sans-serif" fontWeight="bold" fontSize="11" fill="#ffffff">
+      S+
+    </text>
+  </svg>
+);
+
 const ISC2Icon: React.FC = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="36" height="36">
     <rect width="60" height="60" rx="4" fill="#1a1f5e"/>
@@ -124,6 +139,15 @@ const ongoingCertifications = [
     badge: 'AZ-104',
     iconType: 'azure' as const,
   },
+  {
+    title: 'CompTIA Security+',
+    issuer: 'CompTIA',
+    year: '2025',
+    accent: '#c8102e',
+    icon: null,
+    badge: 'S+',
+    iconType: 'comptia' as const,
+  },
 ];
 
 /* ── Helpers ── */
@@ -152,18 +176,20 @@ const renderIcon = (cert: Cert | OngoingCert) => {
     case 'azure':    return <AzureIcon />;
     case 'isc2':     return <ISC2Icon />;
     case 'linkedin': return <LinkedInIcon />;
+    case 'comptia':  return <CompTIAIcon />;
     default:         return null;
   }
 };
 
 const usesCustomIcon = (cert: Cert | OngoingCert) =>
-  cert.iconType === 'aws' || cert.iconType === 'azure' || cert.iconType === 'isc2' || cert.iconType === 'linkedin';
+  cert.iconType === 'aws' || cert.iconType === 'azure' || cert.iconType === 'isc2' || cert.iconType === 'linkedin' || cert.iconType === 'comptia';
 
 const badgeTextColor = (cert: Cert | OngoingCert) => {
   if (cert.iconType === 'aws')      return '#FF9900';
   if (cert.iconType === 'azure')    return '#0078d4';
   if (cert.iconType === 'isc2')     return '#1a1f5e';
   if (cert.iconType === 'linkedin') return '#0A66C2';
+  if (cert.iconType === 'comptia')  return '#c8102e';
   return '#fff';
 };
 
