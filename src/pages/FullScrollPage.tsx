@@ -91,7 +91,6 @@ const AboutSection: React.FC = () => (
         <span style={{ fontSize: 20, fontWeight: 'bold', fontFamily: '"Playfair Display", Georgia, serif', color: C.text }}>
           Bachelor of Information Technology
         </span>
-        <span style={{ fontSize: 16, color: C.textSub, fontFamily: '"Playfair Display", Georgia, serif' }}>2019 – 2022</span>
       </div>
       <div style={{ fontSize: 17, color: C.textSub, marginTop: 6 }}>Wellington Institute of Technology (WelTec), New Zealand</div>
     </div>
