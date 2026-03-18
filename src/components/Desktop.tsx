@@ -5,8 +5,9 @@ import DesktopIcon from './DesktopIcon';
 import FullScrollPage from '../pages/FullScrollPage';
 import Contact from '../pages/Contact';
 import PacManGame from '../pages/PacManGame';
+import LottoGame from '../pages/LottoGame';
 
-type PageKey = 'portfolio' | 'contact' | 'pacman';
+type PageKey = 'portfolio' | 'contact' | 'pacman' | 'lotto';
 
 interface WindowState {
   id: string;
@@ -22,6 +23,7 @@ const PAGE_TITLES: Record<PageKey, string> = {
   portfolio: 'Raghv Bhatia — Portfolio',
   contact: 'Contact Details',
   pacman: 'Pac-Man',
+  lotto: 'Lotto',
 };
 
 const Desktop: React.FC = () => {
@@ -62,6 +64,7 @@ const Desktop: React.FC = () => {
       case 'portfolio': return <FullScrollPage />;
       case 'contact':   return <Contact />;
       case 'pacman':    return <PacManGame />;
+      case 'lotto':     return <LottoGame />;
     }
   };
 
@@ -69,6 +72,7 @@ const Desktop: React.FC = () => {
     { label: 'My Portfolio',    icon: '🖥️', page: 'portfolio' as PageKey },
     { label: 'Contact Details', icon: '✉️', page: 'contact'   as PageKey },
     { label: 'Pac-Man',         icon: '🕹️', page: 'pacman'    as PageKey },
+    { label: 'Lotto',           icon: '🎰', page: 'lotto'     as PageKey },
   ];
 
   return (
