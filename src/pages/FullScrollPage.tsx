@@ -42,16 +42,47 @@ const AboutSection: React.FC = () => (
     <h2 style={h2Style}>About Me</h2>
     <div style={dividerStyle} />
 
-    <p style={{ fontSize: 19, lineHeight: 1.95, color: C.text, marginBottom: 20 }}>
-      I'm <strong style={{ color: C.accent }}>Raghv Bhatia</strong> — an IT professional who thrives on solving
-      technical challenges and improving IT workflows. Experienced in desktop support, cloud platforms,
-      and end-user troubleshooting. Known for taking ownership, staying calm under pressure, and delivering
-      results in fast-paced environments, with a strong focus on problem solving and continuous learning.
+    <p style={{ fontSize: 19, lineHeight: 1.95, color: C.text, marginBottom: 20, fontStyle: 'italic', borderLeft: `4px solid ${C.accent}`, paddingLeft: 20 }}>
+      My story didn't start in a classroom — it started with a one-way ticket and a big dream.
     </p>
-    <p style={{ fontSize: 19, lineHeight: 1.95, color: C.text, marginBottom: 40 }}>
-      Currently working as a <strong style={{ color: C.accent }}>Technology Digital Experience Partner</strong> at
-      Farmlands Co-operative Ltd, where I lead IT support, hardware deployments, vendor management,
-      and new retail site launches across New Zealand.
+
+    <p style={{ fontSize: 18, lineHeight: 1.95, color: C.text, marginBottom: 20 }}>
+      In 2019, I left India with a suitcase, a student visa, and an unshakeable passion for technology.
+      New Zealand had caught my attention, so I took the leap. Stepping off the plane in{' '}
+      <strong style={{ color: C.accent }}>Wellington</strong>, I felt equal parts excited and terrified —
+      the cold, high-speed winds, the rolling steep hills, and the unfamiliar accent were all reminders
+      that I was now 12,000 kilometres from home.
+    </p>
+
+    <p style={{ fontSize: 18, lineHeight: 1.95, color: C.text, marginBottom: 20 }}>
+      I enrolled in the <strong style={{ color: C.accent }}>Bachelor of Information Technology</strong> at
+      Ara Institute of Canterbury, ready to turn my passion into a career. Those three years became the
+      most transformative chapter of my life. I went from writing my first simple scripts to building
+      full applications, working on security and network setups, collaborating on real-world projects,
+      and learning how to solve problems the Kiwi way — with creativity, teamwork, and a healthy dose
+      of resilience.
+    </p>
+
+    <p style={{ fontSize: 18, lineHeight: 1.95, color: C.text, marginBottom: 20 }}>
+      The journey wasn't always smooth. Balancing late-night assignments with homesickness, adapting to
+      a completely different style of education, and pushing myself outside my comfort zone taught me
+      more than any textbook ever could. But every challenge came with a reward: lifelong friends from
+      all over the world, mentors who believed in me, and the confident mindset that I can thrive anywhere.
+    </p>
+
+    <p style={{ fontSize: 18, lineHeight: 1.95, color: C.text, marginBottom: 20 }}>
+      Today, I'm based in <strong style={{ color: C.accent }}>Christchurch</strong>, still carrying that
+      same fire that brought me to New Zealand in 2019. Currently working as a{' '}
+      <strong style={{ color: C.accent }}>Technology Digital Experience Partner</strong> at Farmlands
+      Co-operative Ltd, where I lead IT support, hardware deployments, vendor management, and new retail
+      site launches across New Zealand. Whether I'm solving IT challenges, exploring new technologies,
+      or helping businesses make the most of their digital tools, I approach every project with the same
+      mindset: curiosity, attention to detail, and a genuine desire to create something meaningful.
+    </p>
+
+    <p style={{ fontSize: 18, lineHeight: 1.95, color: C.accent, marginBottom: 40, fontWeight: 'bold', fontFamily: '"Playfair Display", Georgia, serif' }}>
+      From the bustling streets of India to the stunning shores of Aotearoa — this is my journey.
+      And it's only just getting started.
     </p>
 
     <div style={{ height: 1, background: C.divider, marginBottom: 32 }} />
