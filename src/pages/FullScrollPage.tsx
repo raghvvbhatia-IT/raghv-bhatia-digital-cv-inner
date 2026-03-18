@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Certifications from './Certifications';
 
 /* ── Design tokens ── */
@@ -99,63 +99,102 @@ const AboutSection: React.FC = () => (
 );
 
 /* ─────────────── Experience ─────────────── */
-interface JobProps {
+interface JobData {
   company: string;
-  url?: string;
+  url: string;
   role: string;
   dates: string;
   tag?: string;
-  description?: string;
-  bullets: string[];
+  prose: string;
 }
 
-const Job: React.FC<JobProps> = ({ company, url, role, dates, tag, description, bullets }) => (
-  <div style={{
-    background: C.cardBg,
-    border: `1px solid ${C.cardBorder}`,
-    borderLeft: `4px solid ${C.accent}`,
-    padding: '24px 28px',
-    marginBottom: 20,
-  }}>
-    <h3 style={{ fontSize: 30, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.accent, marginBottom: 6, lineHeight: 1.1 }}>{company}</h3>
+const jobs: JobData[] = [
+  {
+    company: 'Farmlands Co-operative',
+    url: 'https://www.farmlands.co.nz',
+    role: 'Technology Digital Experience Partner',
+    dates: 'May 2025 – Present',
+    tag: 'Level 1 & 2',
+    prose: 'At Farmlands, I serve as the frontline technology partner for over 1,000 staff across retail sites nationwide. My role spans the full IT lifecycle — from onboarding new team members and setting up their systems, to managing third-party vendor accounts, enabling secure Microsoft Teams collaboration with external organisations, and supporting business-critical platforms like Farmlands Pro, FinOps, Dynamics SE, and POS. I lead end-to-end IT setups for new retail sites, handling everything from PCs and networks to EFTPOS terminals and barcode scanners. I monitor system performance daily, ensure issues are resolved within SLA, and regularly train staff on the tools they depend on.',
+  },
+  {
+    company: 'Christchurch City Council',
+    url: 'https://www.ccc.govt.nz',
+    role: 'Digital Support Analyst',
+    dates: 'Dec 2024 – May 2025',
+    tag: 'Level 1 & 2',
+    prose: 'In this role I supported over 3,000 council employees, ensuring their technology worked reliably every day. I managed user onboarding and offboarding through Active Directory, deployed and decommissioned hardware using SCCM, Intune, and Flexera Snow, and administered access to more than 100 software applications. I also built and maintained IT Knowledge Base articles to reduce repeat tickets, categorised and escalated hardware incidents by priority (P1/P2), and collaborated with senior engineers on more complex infrastructure issues.',
+  },
+  {
+    company: 'Selwyn District Council',
+    url: 'https://www.selwyn.govt.nz',
+    role: 'Digital Operations Support Specialist',
+    dates: 'Aug 2023 – Oct 2024',
+    prose: 'At Selwyn, I was responsible for day-to-day IT support across the council, resolving 99% of tickets within SLA with minimal disruption to services. I coordinated with external vendors for upgrades and operational needs, handled the full onboarding and offboarding process including accounts, licensing, and equipment, and investigated security incidents flagged through Microsoft Defender and Teams alerts. I also contributed to cross-departmental infrastructure projects, bringing a collaborative and solutions-focused approach to every engagement.',
+  },
+  {
+    company: 'ACC New Zealand',
+    url: 'https://www.acc.co.nz',
+    role: 'Performance Monitoring Specialist',
+    dates: 'Nov 2022 – Feb 2023',
+    tag: 'Internship',
+    prose: 'My internship at ACC gave me hands-on experience in enterprise infrastructure monitoring. I used tools like AppDynamics, Zscaler ELK, and ThousandEyes to track server and application performance in real time. I designed and managed a customer service dashboard that integrated multiple APIs and application data sources, giving the team a clearer picture of system health. I also collaborated with the security team to harden server configurations and managed after-hours change schedules, including server patching and security updates.',
+  },
+];
 
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <span style={{ fontSize: 18, fontWeight: 'bold', fontFamily: '"Playfair Display", Georgia, serif', color: C.text }}>{role}</span>
-        {tag && <span style={{ fontSize: 11, background: C.tag, color: '#fff', padding: '3px 10px', borderRadius: 20, letterSpacing: 0.5 }}>{tag}</span>}
+const AccordionJob: React.FC<JobData> = ({ company, url, role, dates, tag, prose }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{
+      background: C.cardBg,
+      border: `1px solid ${C.cardBorder}`,
+      borderLeft: `4px solid ${C.accent}`,
+      marginBottom: 16,
+    }}>
+      {/* Header — always visible, click to toggle */}
+      <div
+        onClick={() => setOpen(o => !o)}
+        style={{
+          padding: '20px 24px',
+          cursor: 'pointer',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 12,
+        }}
+      >
+        <div style={{ flex: 1 }}>
+          <h3 style={{ fontSize: 26, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.accent, margin: '0 0 4px', lineHeight: 1.1 }}>{company}</h3>
+          <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+            <span style={{ fontSize: 17, fontWeight: 'bold', fontFamily: '"Playfair Display", Georgia, serif', color: C.text }}>{role}</span>
+            {tag && <span style={{ fontSize: 11, background: C.tag, color: '#fff', padding: '3px 10px', borderRadius: 20, letterSpacing: 0.5 }}>{tag}</span>}
+          </div>
+          <div style={{ fontSize: 14, color: C.textSub, marginTop: 4, fontFamily: '"Playfair Display", Georgia, serif' }}>
+            {dates} &nbsp;·&nbsp; <a href={url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} style={{ color: C.accent, textDecoration: 'underline', opacity: 0.8 }}>{url.replace('https://', '')}</a>
+          </div>
+        </div>
+        <span style={{ fontSize: 20, color: C.accent, flexShrink: 0, transition: 'transform 0.3s', transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}>▾</span>
       </div>
-      <div style={{ textAlign: 'right' }}>
-        {url && <div><a href={url} target="_blank" rel="noreferrer" style={{ fontSize: 13, color: C.accent, textDecoration: 'underline', opacity: 0.8 }}>{url.replace('https://', '')}</a></div>}
-        <div style={{ fontSize: 15, fontWeight: 'bold', color: C.textSub, fontFamily: '"Playfair Display", Georgia, serif' }}>{dates}</div>
+
+      {/* Expandable prose */}
+      <div style={{
+        maxHeight: open ? 400 : 0,
+        overflow: 'hidden',
+        transition: 'max-height 0.4s ease',
+      }}>
+        <div style={{ padding: '0 24px 20px', borderTop: `1px solid ${C.divider}` }}>
+          <p style={{ fontSize: 17, lineHeight: 1.9, color: C.text, margin: '16px 0 0' }}>{prose}</p>
+        </div>
       </div>
     </div>
-
-    {description && <p style={{ fontSize: 17, lineHeight: 1.8, color: C.textSub, marginBottom: 14, fontStyle: 'italic' }}>{description}</p>}
-
-    <ul style={{ paddingLeft: 20, margin: 0 }}>
-      {bullets.map((b, i) => (
-        <li key={i} style={{ fontSize: 17, lineHeight: 1.85, marginBottom: 6, color: C.text }}>{b}</li>
-      ))}
-    </ul>
-  </div>
-);
+  );
+};
 
 const ExperienceSection: React.FC = () => (
   <div id="experience" style={sectionStyle(true)}>
     <h2 style={h2Style}>Work Experience</h2>
     <div style={dividerStyle} />
-    <Job company="Farmlands Co-operative" url="https://www.farmlands.co.nz" role="Technology Digital Experience Partner" dates="May 2025 – Present" tag="Level 1 & 2"
-      description="Supporting 1000+ staff across New Zealand retail sites with IT operations, hardware deployments, and business-critical systems."
-      bullets={['Manage and support staff with IT system access to ensure smooth daily operations.','Create, configure, and manage third-party vendor accounts.','Enable secure collaboration with external organisations via Microsoft Teams.','Provide frontline support for EFTPOS and key business systems including Farmlands Pro, FinOps, Dynamics SE, and POS.','Handle onboarding and offboarding including user account setup, access provisioning, and deactivation.','Lead IT setup for new retail sites including PCs, networks, POS, and scanners.','Monitor system performance, escalate issues, and ensure resolution within SLAs.','Train staff on IT tools, particularly Farmlands Pro, Dynamics SE, and POS systems.']} />
-    <Job company="Christchurch City Council" url="https://www.ccc.govt.nz" role="Digital Support Analyst" dates="Dec 2024 – May 2025" tag="Level 1 & 2"
-      description="Supported 3000+ council staff ensuring smooth daily operations across IT infrastructure and services."
-      bullets={['Handled user onboarding/offboarding and managed Active Directory access.','Deployed new hardware and decommissioned old devices using SCCM, Intune, and Flexera Snow.','Created and maintained IT Knowledge Base documentation.','Troubleshot and escalated hardware issues; categorised incidents (P1/P2).','Managed access to 100+ software applications based on user roles.']} />
-    <Job company="Selwyn District Council" url="https://www.selwyn.govt.nz" role="Digital Operations Support Specialist" dates="Aug 2023 – Oct 2024"
-      description="Delivered day-to-day IT support and contributed to cross-departmental infrastructure projects."
-      bullets={['Handled and resolved daily IT support tickets promptly.','Coordinated with third-party vendors for IT operations and upgrades.','Resolved 99% of IT issues with minimal disruption and within SLAs.','Onboarded/offboarded staff with account setup, access, licensing, and equipment.','Investigated and resolved security incidents flagged by Defender and Teams alerts.']} />
-    <Job company="ACC New Zealand" url="https://www.acc.co.nz" role="Infrastructure Monitoring Specialist" dates="Nov 2022 – Feb 2023" tag="Internship"
-      description="Monitored critical infrastructure and supported internal IT projects during a summer internship."
-      bullets={['Monitored server and app performance using AppDynamics, Zscaler ELK, and Thousand Eyes.','Designed and managed a customer service dashboard integrating APIs and application data.','Worked with security teams to strengthen system and server security.','Managed change schedules, server patching and security updates after hours.']} />
+    {jobs.map(job => <AccordionJob key={job.company} {...job} />)}
   </div>
 );
 
