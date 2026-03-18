@@ -224,30 +224,30 @@ const SkillsSection: React.FC = () => (
     <h2 style={h2Style}>Skills</h2>
     <div style={dividerStyle} />
 
-    <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.text, marginBottom: 20 }}>Technical Skills</h3>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40 }}>
+    <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.text, marginBottom: 24 }}>Technical Skills</h3>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginBottom: 40 }}>
       {techSkills.map(group => (
-        <div key={group.category} style={{ background: C.cardBg, border: `1px solid ${C.cardBorder}`, padding: '16px 20px' }}>
-          <div style={{ fontSize: 13, fontWeight: 'bold', color: C.accent, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 10 }}>{group.category}</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {group.items.map(item => (
-              <span key={item} style={{ fontSize: 15, background: C.bgAlt, border: `1px solid ${C.divider}`, color: C.text, padding: '4px 12px', borderRadius: 2 }}>{item}</span>
-            ))}
+        <div key={group.category}>
+          <div style={{ fontSize: 15, fontWeight: 'bold', color: C.accent, letterSpacing: 0.5, marginBottom: 8 }}>
+            {group.category}
           </div>
+          <ul style={{ paddingLeft: 20, margin: 0 }}>
+            {group.items.map(item => (
+              <li key={item} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 4, color: C.text }}>{item}</li>
+            ))}
+          </ul>
         </div>
       ))}
     </div>
 
     <div style={{ height: 1, background: C.divider, marginBottom: 32 }} />
 
-    <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.text, marginBottom: 20 }}>Soft Skills</h3>
-    <div style={{ background: C.cardBg, border: `1px solid ${C.cardBorder}`, borderLeft: `4px solid ${C.accent}`, padding: '20px 24px' }}>
-      <ul style={{ paddingLeft: 20, margin: 0 }}>
-        {softSkills.map((skill, i) => (
-          <li key={i} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 6, color: C.text }}>{skill}</li>
-        ))}
-      </ul>
-    </div>
+    <h3 style={{ fontSize: 22, fontFamily: '"Abril Fatface", Georgia, serif', fontWeight: 400, color: C.text, marginBottom: 24 }}>Soft Skills</h3>
+    <ul style={{ paddingLeft: 20, margin: 0 }}>
+      {softSkills.map((skill, i) => (
+        <li key={i} style={{ fontSize: 17, lineHeight: 1.9, marginBottom: 6, color: C.text }}>{skill}</li>
+      ))}
+    </ul>
   </div>
 );
 
